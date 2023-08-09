@@ -2,6 +2,7 @@ const audioPlayer = document.getElementById("poem");
 const torifudaReference = document.getElementById("image");
 const startButton = document.getElementById("startButton");
 const playStatusButton = document.getElementById("playStatusButton");
+const progress = document.getElementById("progress");
 
 /**
  * Begins a new reading/game
@@ -11,6 +12,7 @@ export function start() {
     endReading()
     playStatusButton.hidden = false;
     playStatusButton.innerText = "⏸"
+    progress.innerText = "Current: Joka (Opening Poem) - 0 of 100"
     const order = getRandomOrder();
     beginReadings(order);
 }
@@ -31,6 +33,7 @@ function beginReadings(order) {
         }
         else if (audioPlayer.src.endsWith("poems/I-000B.ogg")) {
             var id = order[i];
+            progress.innerText = `Random Poem - ${i} of 100`
             playPoem(id, section);
         }
         else {
@@ -46,6 +49,7 @@ function beginReadings(order) {
                     endGame()
                 }
                 id = order[i];
+                progress.innerText = `Random Poem - ${i} of 100`
                 playPoem(id, section);
     
                 torifudaReference.textContent = id;
@@ -67,21 +71,9 @@ function endReading() {
     playStatusButton.hidden = true;
     torifudaReference.src = "";
     audioPlayer.src = "";
+    progress.innerText = "";
 }
 
-
-/**
- * Pauses reading for card replacement (press spacebar)
- */
-export function pause() {
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-        playStatusButton.innerText = "⏸";
-    } else {
-        audioPlayer.pause();
-        playStatusButton.innerText = "⏵";
-    }
-}
 
 /**
  * Plays the relevant poem and shows the right image based on input parameters
@@ -102,11 +94,25 @@ function playPoem(id, section) {
     if (id > 0) torifudaReference.src = torifuda;
     audioPlayer.src = poem;
 
-    console.log(torifuda, poem);
-
     // play audio
     audioPlayer.load();
     audioPlayer.play();
+}
+
+
+/**
+ * Pauses reading for card replacement (press spacebar)
+ */
+export function pause() {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playStatusButton.innerText = "⏸";
+        progress.innerText = progress.innerText.slice(0, -9)
+    } else {
+        audioPlayer.pause();
+        playStatusButton.innerText = "⏵";
+        progress.innerText = progress.innerText + " (paused)"
+    }
 }
 
 

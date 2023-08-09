@@ -11,7 +11,25 @@
 
     <h1 class="title">Karuta Player</h1>
 
-    <p class="instructions">Instructions.</p>
+    <div id="instructions" class="normalText">
+        <p>
+            This is an auto-reader for the game of Karuta. Upon clicking start,
+            you will hear the opening poem, which is then followed by the 100 poems 
+            used in Karuta, <a href=https://en.wikipedia.org/wiki/Ogura_Hyakunin_Isshu>
+            <i>Hyakunin Isshu</i></a>. The order of these poems is completely 
+            randomized to mitigate any concerns of player memorization of reading 
+            order.
+        </p>
+        <p>
+            Press the spacebar or the button to pause the reading when resetting 
+            card orientation or if you simply want a pause.
+        </p>
+        <p>
+            To learn more about the game of Karuta, see <a href=https://en.wikipedia.org/wiki/Karuta>
+            here</a>, or watch <a href=https://en.wikipedia.org/wiki/Chihayafuru>
+            Chihayafuru</a> :).
+        </p>
+    </div>
 
     <button id="startButton">start</button>
 
@@ -19,9 +37,10 @@
 
     <div>
         <img id="image" class="image">
+        <audio id="poem"></audio>
     </div>
 
-    <audio id="poem"></audio>
+    <p id="progress" class="normalText"></div>
 
     <div>
         Click <a href="poems.html">here</a> to see all 100 poems with audio, 

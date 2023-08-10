@@ -50,7 +50,7 @@ function beginReadings(order) {
                     endReading()
                 }
                 id = order[i];
-                progress.innerText = `Random Poem - ${i} of 100`
+                progress.innerText = `Random Poem - ${i + 1} of 100`
                 playPoem(id, section);
             }
         }

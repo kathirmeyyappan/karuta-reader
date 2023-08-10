@@ -1,5 +1,6 @@
 const audioPlayer = document.getElementById("poem");
-const torifudaReference = document.getElementById("image");
+const torifudaReference = document.getElementById("torifuda");
+const yomifudaReference = document.getElementById("yomifuda");
 const startButton = document.getElementById("startButton");
 const playStatusButton = document.getElementById("playStatusButton");
 const progress = document.getElementById("progress");
@@ -46,14 +47,11 @@ function beginReadings(order) {
                     i++;
                 }
                 else {
-                    endGame()
+                    endReading()
                 }
                 id = order[i];
                 progress.innerText = `Random Poem - ${i} of 100`
                 playPoem(id, section);
-    
-                torifudaReference.textContent = id;
-                // const image = `images/${id}.jpg`;
             }
         }
     }
@@ -70,6 +68,7 @@ function beginReadings(order) {
 function endReading() {
     playStatusButton.hidden = true;
     torifudaReference.src = "";
+    yomifudaReference.src = "";
     audioPlayer.src = "";
     progress.innerText = "";
 }
@@ -89,9 +88,13 @@ function playPoem(id, section) {
     // get correct file
     const poem = `poems/I-${idStr}.ogg`;
     const torifuda = `torifuda/fuda${id}.jpg`;
+    const yomifuda = `yomifuda/jpoem${id}.jpg`;
 
-    // assing image and audio to respective elements
-    if (id > 0) torifudaReference.src = torifuda;
+    // adding image and audio to respective elements
+    if (id > 0) {
+        torifudaReference.src = torifuda;
+        yomifudaReference.src = yomifuda;
+    }
     audioPlayer.src = poem;
 
     // play audio
@@ -104,6 +107,9 @@ function playPoem(id, section) {
  * Pauses reading for card replacement (press spacebar)
  */
 export function pause() {
+    if (torifudaReference.src == "") {
+        return;
+    }
     if (audioPlayer.paused) {
         audioPlayer.play();
         playStatusButton.innerText = "⏸";

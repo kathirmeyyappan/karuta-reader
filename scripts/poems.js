@@ -11,17 +11,20 @@ for (let i = 1 ; i <= 100; i++) {
     <div class="poem">
         
         <p class="poemHeader">Poem ${i}</p>
-        
-        <p class="poemSubHeader">Kami no Ku</p>
-        <audio controls id="poemAudio${i}" class="poemAudio" src="poems/I-${idStr}A.ogg"></audio>
-        
-        <p class="poemSubHeader">Shimo no Ku</p>
-        <audio controls id="poemAudio${i}" class="poemAudio" src="poems/I-${idStr}B.ogg"></audio>
 
-        <div>
-            <img id="poemImage${i}" class="poemImage" src="torifuda/fuda${i}.jpg">
+        <img class="poemImage" id="poemImage${i}" src="yomifuda/jpoem${i}.jpg">
+        
+        <div class="poemSubheader">
+            <span>
+                <p class="normalText" align="center">Kami no Ku</p>
+                <audio controls id="poemAudio${i}A" class="poemAudioA" src="poems/I-${idStr}A.ogg"></audio>
+            </span>
+
+            <span>
+                <p class="normalText" align="center">Shimo no Ku</p>
+                <audio controls id="poemAudio${i}B" class="poemAudioB" src="poems/I-${idStr}B.ogg"></audio>
+            </span>
         </div>
-
     </div>
     `
 }

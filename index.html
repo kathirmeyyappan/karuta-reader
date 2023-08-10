@@ -3,13 +3,16 @@
 
 <head>
 
-    <title>HTML Tutorial</title>
+    <title>Karuta Autoreader</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="scripts/main.js"></script>
 
 </head>
 
 <body>
 
-    <h1 class="title">Karuta Player</h1>
+    <h1 class="title">Karuta Autoreader</h1>
 
     <div id="instructions" class="normalText">
         <p>
@@ -19,36 +22,33 @@
             <i>Hyakunin Isshu</i></a>. The order of these poems is completely 
             randomized to mitigate any concerns of player memorization of reading 
             order.
-        </p>
-        <p>
+            <br /><br />
             Press the spacebar or the button to pause the reading when resetting 
             card orientation or if you simply want a pause.
-        </p>
-        <p>
+            <br /><br />
             To learn more about the game of Karuta, see <a href=https://en.wikipedia.org/wiki/Karuta>
             here</a>, or watch <a href=https://en.wikipedia.org/wiki/Chihayafuru>
             Chihayafuru</a> :).
         </p>
     </div>
 
-    <button id="startButton">start</button>
+    <button id="startButton" class="button">start</button>
 
-    <button id="playStatusButton" class="playStatusButton" hidden></button>
-
-    <div>
-        <img id="image" class="image">
-        <audio id="poem"></audio>
-    </div>
+    <button id="playStatusButton" class="button">⏵</button>
 
     <p id="progress" class="normalText"></div>
 
-    <div>
+    <div class="imageDiv">
+        <img id="torifuda" class="image">
+        <img id="yomifuda" class="image">
+        <audio id="poem"></audio>
+    </div>
+
+    <div class="normalText" id="bottomNote">
         Click <a href="poems.html">here</a> to see all 100 poems with audio, 
         text, and meaning
     </div>
 
 </body>
-
-<script type="module" src="scripts/main.js"></script>
 
 </html>

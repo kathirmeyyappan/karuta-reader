@@ -1,0 +1,91 @@
+body, h1, p, button, img, audio {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Courier, monospace;
+  background-color: #f0f8ea; 
+}
+
+.title {
+  text-align: center;
+  font-weight: bolder;
+  padding: 20px;
+  font-size: 2em;
+}
+
+.normalText {
+  margin: 20px;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.poemHeader {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#bottomNote {
+    text-align: center;
+}
+
+.button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #d9bf77;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff; 
+}
+
+#startButton:hover, #playStatusButton:hover {
+  background-color: #c1ad5b; 
+}
+
+.image {
+  height: 20rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+  margin: auto 2rem;
+  object-fit: contain;
+}
+
+.imageDiv, .poemSubheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.poemImage {
+    height: 20rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    margin: 2rem auto 1rem;
+    object-fit: contain;
+    border-radius: 1rem;
+}
+
+.poem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0rem 0rem 4rem;
+}
+
+#progress {
+  text-align: center;
+  margin: 20px;
+  font-size: 1.5em;
+}
+
+a {
+  color: #157d00;
+  text-decoration: none; 
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}

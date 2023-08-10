@@ -42,7 +42,7 @@ function beginReadings(order) {
                 // play next poem or section
                 if (section == 'A') {
                     section = 'B';
-                } else if (section == 'B' & i < 99) {
+                } else if (section == 'B' && i < 99) {
                     section = 'A';
                     i++;
                 }

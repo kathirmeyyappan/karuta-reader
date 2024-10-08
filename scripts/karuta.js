@@ -34,7 +34,7 @@ function beginReadings(order) {
         }
         else if (audioPlayer.src.endsWith("poems/I-000B.ogg")) {
             var id = order[i];
-            progress.innerText = `Random Poem - ${i} of 100`
+            progress.innerText = `Random Poem - 1 of 100`
             playPoem(id, section);
         }
         else {
